@@ -1,4 +1,5 @@
-import 'package:elt_machine_task/presentation/home/homescreen.dart';
+import 'package:elt_machine_task/presentation/detailedscreen/detailedview.dart';
+import 'package:elt_machine_task/presentation/homescreen/homescreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
