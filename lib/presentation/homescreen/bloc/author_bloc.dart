@@ -4,7 +4,6 @@ import 'dart:math';
 import 'package:bloc/bloc.dart';
 import 'package:elt_machine_task/data/repositiory/api_authorrepo.dart';
 import 'package:elt_machine_task/domain/models/author_model.dart';
-import 'package:elt_machine_task/presentation/homescreen/bloc/home_bloc.dart';
 import 'package:meta/meta.dart';
 
 part 'author_event.dart';

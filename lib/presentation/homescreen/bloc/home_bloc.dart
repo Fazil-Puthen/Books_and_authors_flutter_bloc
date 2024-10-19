@@ -14,9 +14,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     });
     on<FetchBooks>(fetchbooks);
     on<Search>(searchbooks);
+    on<UpdateBook>(updatebook);
   }
    final book=Books();
-
+  
+  //fetch all books
   FutureOr<void> fetchbooks(FetchBooks event, Emitter<HomeState> emit) async{
     emit(HomeLoading());
     try{
@@ -34,11 +36,31 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     }
   }
 
+  //search books
   FutureOr<void> searchbooks(Search event, Emitter<HomeState> emit) {
     List<BookModel> filterdbooks=[];
     emit(HomeLoading());
       filterdbooks=event.book.where((item)=>item.title.toLowerCase()
       .contains(event.value.toLowerCase())).toList();
       emit(HomeLoaded(booklist: filterdbooks));
+  }
+  
+  //updatebook
+  FutureOr<void> updatebook(UpdateBook event, Emitter<HomeState> emit)async {
+
+    final newbook=BookModel(
+      id: event.id,
+      title: event.title,
+      description: event.description,
+      publishedDate: event.date,
+      authorid: event.authorId,
+      coverUrl: event.coverPictureURL,
+       price: event.price);
+   try{
+    await book.updatebook(newbook);
+   }
+   catch(e){
+    throw Exception(e.toString());
+   }
   }
 }

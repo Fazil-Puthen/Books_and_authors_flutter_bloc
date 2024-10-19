@@ -15,7 +15,7 @@ Future<Either<String,List<BookModel>>> getbooks();
 Future<BookModel> getbookbyid(String id);
 
 //Update book by id
-Future<BookModel> updatebook(String id);
+Future<void> updatebook(BookModel book);
 
 //Delete book by id
 Future<BookModel> deletebook(String id);

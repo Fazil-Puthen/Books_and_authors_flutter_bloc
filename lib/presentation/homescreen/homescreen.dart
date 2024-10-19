@@ -1,4 +1,3 @@
-import 'package:elt_machine_task/core/colors.dart';
 import 'package:elt_machine_task/presentation/homescreen/subwidgets/bottom_sheet.dart';
 import 'package:elt_machine_task/presentation/homescreen/widgets/Authorswidget.dart';
 import 'package:elt_machine_task/presentation/homescreen/widgets/homewidget.dart';

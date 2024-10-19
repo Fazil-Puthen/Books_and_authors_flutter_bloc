@@ -56,11 +56,27 @@ class Books implements BooksRepo{
     return left(e.toString());
   }
   }
+  
 
+  //updatesbook
   @override
-  Future<BookModel> updatebook(String id) {
-    // TODO: implement updatebook
-    throw UnimplementedError();
+  Future<void> updatebook(BookModel book) async{
+   final url=Uri.parse('https://assessment.eltglobal.in/api/books/$id');
+   try{
+    await http.patch(url,
+    body:{
+      "id":book.id,
+      "title":book.price,
+      "description":book.description ,
+      "publishedDate":book.publishedDate,
+      "authorId": book.authorid,
+      "coverPictureURL": book.coverUrl,
+      "price": book.price
+    } );
+   }
+   catch(e){
+    throw Exception(e.toString());
+   }
   }
   
   //method to fetch author name from authorid

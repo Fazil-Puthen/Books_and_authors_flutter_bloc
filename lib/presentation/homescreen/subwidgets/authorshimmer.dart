@@ -1,4 +1,4 @@
-import 'package:elt_machine_task/core/colors.dart';
+import 'package:elt_machine_task/core/constants/boxes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -19,24 +19,24 @@ class AuthorShimmer extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const SizedBox(
-                          width: 10,
-                        ),
+
+                        Boxes.bbox,
+
                         CircleAvatar(
                           backgroundColor: Colors.grey[300],
                         ),
-                        const SizedBox(
-                          width: 10,
-                        ),
+                        
+                        Boxes.bbox,
+
                          Expanded(
                           child:  Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               authorbox(15),
-                              SizedBox(height: 8,),
+                              const SizedBox(height: 8,),
                               authorbox(10),
-                              SizedBox(height: 10,),
+                              Boxes.bbox,
                               authorbox(10)
                             ],
                           ),

@@ -1,11 +1,11 @@
 import 'package:elt_machine_task/presentation/homescreen/bloc/author_bloc.dart';
 import 'package:elt_machine_task/presentation/homescreen/bloc/home_bloc.dart';
-import 'package:elt_machine_task/presentation/homescreen/homescreen.dart';
 import 'package:elt_machine_task/presentation/splashscreen/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 

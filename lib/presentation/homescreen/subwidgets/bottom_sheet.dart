@@ -1,3 +1,4 @@
+import 'package:elt_machine_task/core/constants/boxes.dart';
 import 'package:elt_machine_task/presentation/homescreen/bloc/author_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,12 +32,12 @@ Future<dynamic> bottomsheet(BuildContext context) {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 10),
+              Boxes.bbox,
               const Text(
                 'Add author',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
               ),
-              const SizedBox(height: 10),
+             Boxes.bbox,
               Form(
                 key: formKey,
                 child: Column(
@@ -53,18 +54,18 @@ Future<dynamic> bottomsheet(BuildContext context) {
                       },
                       decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.orange, width: 2.0),
+                          borderSide: const BorderSide(color: Colors.orange, width: 2.0),
                           borderRadius: BorderRadius.circular(6),
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                         focusColor: Colors.orange,
-                        contentPadding: EdgeInsets.all(6),
+                        contentPadding: const EdgeInsets.all(6),
                         hintText: 'Name',
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    Boxes.bbox,
 
                     // Field for adding biography
                     TextFormField(
@@ -86,11 +87,11 @@ Future<dynamic> bottomsheet(BuildContext context) {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         focusColor: Colors.orange,
-                        contentPadding: EdgeInsets.all(6),
+                        contentPadding: const EdgeInsets.all(6),
                         hintText: 'Biography',
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    Boxes.bbox,
 
                     // Field for adding DOB
                     TextFormField(
@@ -106,14 +107,14 @@ Future<dynamic> bottomsheet(BuildContext context) {
                       onTap: () => _selectDate(context),
                       decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.orange, width: 2.0),
+                          borderSide: const BorderSide(color: Colors.orange, width: 2.0),
                           borderRadius: BorderRadius.circular(6),
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                         focusColor: Colors.orange,
-                        contentPadding: EdgeInsets.all(6),
+                        contentPadding:const EdgeInsets.all(6),
                         hintText: 'DOB',
                         suffixIcon: const Icon(Icons.calendar_today_outlined),
                       ),
@@ -121,7 +122,7 @@ Future<dynamic> bottomsheet(BuildContext context) {
                   ],
                 ),
               ),
-              const SizedBox(height: 10),
+              Boxes.bbox,
 
               // Add author button
               InkWell(

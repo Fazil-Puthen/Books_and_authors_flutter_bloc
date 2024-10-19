@@ -77,7 +77,7 @@ class HomeView extends StatelessWidget {
                               children: [
                                 //cover picture
                                 Container(
-                                  margin: EdgeInsets.only(top: 5),
+                                  margin:  const EdgeInsets.only(top: 5),
                                   height: 200,
                                   child: Center(
                                     child: ClipRRect(

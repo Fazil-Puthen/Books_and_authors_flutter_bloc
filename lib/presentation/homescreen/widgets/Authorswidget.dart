@@ -1,8 +1,7 @@
 import 'dart:math';
 
-import 'package:elt_machine_task/core/colors.dart';
+import 'package:elt_machine_task/core/constants/colors.dart';
 import 'package:elt_machine_task/presentation/homescreen/bloc/author_bloc.dart';
-import 'package:elt_machine_task/presentation/homescreen/bloc/home_bloc.dart';
 import 'package:elt_machine_task/presentation/homescreen/subwidgets/authorshimmer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
