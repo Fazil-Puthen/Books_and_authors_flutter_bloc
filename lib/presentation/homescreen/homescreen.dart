@@ -1,4 +1,5 @@
-import 'package:elt_machine_task/core/constants.dart';
+import 'package:elt_machine_task/core/colors.dart';
+import 'package:elt_machine_task/presentation/homescreen/subwidgets/bottom_sheet.dart';
 import 'package:elt_machine_task/presentation/homescreen/widgets/Authorswidget.dart';
 import 'package:elt_machine_task/presentation/homescreen/widgets/homewidget.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -28,76 +29,7 @@ class _HomePageState extends State<HomePage> {
         floatingActionButton: _currentindex==1?FloatingActionButton(
           onPressed:(){
             //bottom sheet for adding author
-            showModalBottomSheet(context: context,
-             builder:(context) {
-               return  Padding(
-                 padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
-                 child: SizedBox(
-                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      box,
-                      const Text('Add author',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
-                      box,
-                      //field for adding author name
-                      TextFormField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                          focusColor: Colors.orange,
-                          contentPadding: EdgeInsets.all(6),
-                          hintText: 'Name'
-                        ),
-                      ),
-                      box,
-                      //field for adding biography
-                      Container(
-                        height: 180,
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 0.5),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            TextFormField(
-                            maxLines: null,
-                            decoration: const InputDecoration(
-                              focusColor: Colors.orange,
-                              border: InputBorder.none,
-                              contentPadding: EdgeInsets.only(top: 90),
-                              hintText: 'Biography'
-                            ),
-                                                  ),
-                          ],
-                        ),
-                      ),
-                     box,
-                     //field for adding DOB
-                     TextFormField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                          focusColor: Colors.orange,
-                          contentPadding: EdgeInsets.all(6),
-                          hintText: 'DOB',
-                          suffixIcon: Icon(Icons.calendar_today_outlined)
-                        ),
-                      ),
-                      box,
-
-                      //Add author button
-                      Container(
-                        width: MediaQuery.of(context).size.width*0.9,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.orange),
-                          child:const Center(child: Text('Add author',style: TextStyle(color: Colors.white),),),
-                      )
-                    ],
-                   ),
-                 ),
-               );
-             },);
+            bottomsheet(context);
           },
           child:const Icon(Icons.add,color: Colors.white,) ,
           backgroundColor: Colors.black54):
@@ -131,4 +63,6 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  
 }
